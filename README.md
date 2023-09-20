@@ -23,6 +23,17 @@ Users must configure required parameters in the `datalogger` class in`datalogger
 4. **Name of the Experiment**: A name describing the experiment or type of experiment. Variable: `name_of_experiment`.
 5. **Frequency (Optional)**: The frequency or time window at which data should be recorded (default: 10 nanoseconds). Variable: `ws`.
 
+### Launch
+
+To start recording, follow these steps:
+
+1. Ensure that your experiments have been initiated, and data is actively being published.
+2. Open a terminal window.
+3. Execute the following command:
+
+   ```shell
+   ros2 run cairo_robot record_data
+
 ## Database Information
 
 This package is designed to work with MongoDB version 7.0.1. You can find installation instructions for MongoDB [here](https://www.mongodb.com/try/download/community). Each significant experiment is stored as a database, and each trial is stored as a collection. Local paths for high-dimensional data (HDF5 database name) and global paths (path to HDF5 files) are stored as separate features. Data from different sources is synchronized with a common reference time (time of generation). The latest data generated within the specified time window (default: 10 nanoseconds) is recorded, while the rest is ignored.
